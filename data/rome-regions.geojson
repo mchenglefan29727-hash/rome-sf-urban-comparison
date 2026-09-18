@@ -1,0 +1,1135 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "roman": "I",
+        "name": "Porta Capena",
+        "area": 2.23,
+        "pos": 10,
+        "neg": 8,
+        "net": 0.897,
+        "normalized": 0.049,
+        "grade_normalized": "D",
+        "grade_agnostic": "D",
+        "positive_pct": 55.56,
+        "description": "A sprawling, southern peripheral region located outside the city's ancient stone wall. It served as a busy traffic corridor centered around the Appian Way, packed with roadside tombs, traveler lodging, and water channels.",
+        "positive_density": 4.484,
+        "negative_density": 3.587,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.496788,
+              41.883008
+            ],
+            [
+              12.50073,
+              41.883711
+            ],
+            [
+              12.506423,
+              41.884062
+            ],
+            [
+              12.512555,
+              41.883711
+            ],
+            [
+              12.516934,
+              41.882656
+            ],
+            [
+              12.519562,
+              41.880898
+            ],
+            [
+              12.519562,
+              41.875625
+            ],
+            [
+              12.516058,
+              41.872461
+            ],
+            [
+              12.511241,
+              41.870703
+            ],
+            [
+              12.503796,
+              41.871055
+            ],
+            [
+              12.501606,
+              41.872812
+            ],
+            [
+              12.49854,
+              41.875977
+            ],
+            [
+              12.495912,
+              41.879844
+            ],
+            [
+              12.496788,
+              41.883008
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2,
+        "roman": "II",
+        "name": "Caelimontium",
+        "area": 1.52,
+        "pos": 10,
+        "neg": 8,
+        "net": 1.316,
+        "normalized": 0.052,
+        "grade_normalized": "D",
+        "grade_agnostic": "D",
+        "positive_pct": 55.56,
+        "description": "A mixed-use hill district covering the Caelian Hill. The heights featured affluent estate homes and military barracks, while the lower slopes blended into high-density worker blocks and bustling markets.",
+        "positive_density": 6.579,
+        "negative_density": 5.263,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.488467,
+              41.889336
+            ],
+            [
+              12.492409,
+              41.889336
+            ],
+            [
+              12.496788,
+              41.888984
+            ],
+            [
+              12.501168,
+              41.887578
+            ],
+            [
+              12.501606,
+              41.885117
+            ],
+            [
+              12.499416,
+              41.883359
+            ],
+            [
+              12.495912,
+              41.882656
+            ],
+            [
+              12.492409,
+              41.883008
+            ],
+            [
+              12.489343,
+              41.884062
+            ],
+            [
+              12.488029,
+              41.88582
+            ],
+            [
+              12.488467,
+              41.889336
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3,
+        "roman": "III",
+        "name": "Isis et Serapis",
+        "area": 0.37,
+        "pos": 9,
+        "neg": 2,
+        "net": 18.919,
+        "normalized": 0.201,
+        "grade_normalized": "D",
+        "grade_agnostic": "B",
+        "positive_pct": 81.82,
+        "description": "A compact valley and hillside district that contained the massive Colosseum valley. This region was a highly active entertainment and commercial hub, surrounded by multi-story apartment blocks for everyday workers.",
+        "positive_density": 24.324,
+        "negative_density": 5.405,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.490657,
+              41.894609
+            ],
+            [
+              12.495474,
+              41.896016
+            ],
+            [
+              12.500292,
+              41.896367
+            ],
+            [
+              12.501168,
+              41.894609
+            ],
+            [
+              12.500292,
+              41.8925
+            ],
+            [
+              12.50073,
+              41.890391
+            ],
+            [
+              12.49854,
+              41.889336
+            ],
+            [
+              12.495474,
+              41.889863
+            ],
+            [
+              12.491971,
+              41.890742
+            ],
+            [
+              12.490657,
+              41.8925
+            ],
+            [
+              12.490657,
+              41.894609
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 4,
+        "roman": "IV",
+        "name": "Templum Pacis",
+        "area": 0.26,
+        "pos": 28,
+        "neg": 9,
+        "net": 73.077,
+        "normalized": 0.659,
+        "grade_normalized": "B",
+        "grade_agnostic": "C",
+        "positive_pct": 75.68,
+        "description": "A heavily crowded, central valley region encompassing the infamous Subura district. It was a chaotic, high-density neighborhood where working-class market stalls and cheap wooden tenements stood directly alongside grand public monuments.",
+        "positive_density": 107.692,
+        "negative_density": 34.615,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.484526,
+              41.894258
+            ],
+            [
+              12.488029,
+              41.89584
+            ],
+            [
+              12.490657,
+              41.894961
+            ],
+            [
+              12.492409,
+              41.893379
+            ],
+            [
+              12.491533,
+              41.891094
+            ],
+            [
+              12.489343,
+              41.889863
+            ],
+            [
+              12.486715,
+              41.890391
+            ],
+            [
+              12.484964,
+              41.891797
+            ],
+            [
+              12.484526,
+              41.894258
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5,
+        "roman": "V",
+        "name": "Esquiliae",
+        "area": 2.21,
+        "pos": 26,
+        "neg": 13,
+        "net": 5.882,
+        "normalized": 0.091,
+        "grade_normalized": "D",
+        "grade_agnostic": "D",
+        "positive_pct": 66.67,
+        "description": "A massive, sprawling eastern peripheral plain. This area acted as a major municipal edge zone, hosting vast public parks and elite estates on one side, while absorbing sprawling underclass cemeteries and defensive border walls on the other.",
+        "positive_density": 11.765,
+        "negative_density": 5.882,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.499854,
+              41.908672
+            ],
+            [
+              12.503358,
+              41.909199
+            ],
+            [
+              12.505547,
+              41.907617
+            ],
+            [
+              12.506423,
+              41.904102
+            ],
+            [
+              12.508175,
+              41.900937
+            ],
+            [
+              12.510365,
+              41.897422
+            ],
+            [
+              12.512993,
+              41.893906
+            ],
+            [
+              12.516934,
+              41.891797
+            ],
+            [
+              12.519562,
+              41.889336
+            ],
+            [
+              12.51781,
+              41.88793
+            ],
+            [
+              12.513431,
+              41.886523
+            ],
+            [
+              12.508613,
+              41.886172
+            ],
+            [
+              12.503358,
+              41.887578
+            ],
+            [
+              12.501168,
+              41.889688
+            ],
+            [
+              12.500292,
+              41.8925
+            ],
+            [
+              12.501168,
+              41.894609
+            ],
+            [
+              12.502482,
+              41.896719
+            ],
+            [
+              12.50292,
+              41.899531
+            ],
+            [
+              12.502044,
+              41.902695
+            ],
+            [
+              12.499854,
+              41.908672
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6,
+        "roman": "VI",
+        "name": "Alta Semita",
+        "area": 1.81,
+        "pos": 13,
+        "neg": 11,
+        "net": 1.105,
+        "normalized": 0.05,
+        "grade_normalized": "D",
+        "grade_agnostic": "D",
+        "positive_pct": 54.17,
+        "description": "An elevated, high-status hill district positioned along the Quirinal ridge. This region was a highly desirable residential zone, characterized by clean air, vast private garden estates, and premium villas away from the valley traffic.",
+        "positive_density": 7.182,
+        "negative_density": 6.077,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.484526,
+              41.901641
+            ],
+            [
+              12.487153,
+              41.903398
+            ],
+            [
+              12.490219,
+              41.904453
+            ],
+            [
+              12.493723,
+              41.905859
+            ],
+            [
+              12.496788,
+              41.907441
+            ],
+            [
+              12.499416,
+              41.908672
+            ],
+            [
+              12.501168,
+              41.904453
+            ],
+            [
+              12.502482,
+              41.900937
+            ],
+            [
+              12.502482,
+              41.897422
+            ],
+            [
+              12.50073,
+              41.896016
+            ],
+            [
+              12.497226,
+              41.895312
+            ],
+            [
+              12.493285,
+              41.894609
+            ],
+            [
+              12.489343,
+              41.894258
+            ],
+            [
+              12.485839,
+              41.894785
+            ],
+            [
+              12.484307,
+              41.896367
+            ],
+            [
+              12.484526,
+              41.901641
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7,
+        "roman": "VII",
+        "name": "Via Lata",
+        "area": 0.96,
+        "pos": 23,
+        "neg": 4,
+        "net": 19.792,
+        "normalized": 0.208,
+        "grade_normalized": "D",
+        "grade_agnostic": "B",
+        "positive_pct": 85.19,
+        "description": "A stable, wealthy district flanking the wide northern highway. It served as a prime residential area filled with upscale townhouses, public porticoes, and direct access to clean aqueduct spring lines.",
+        "positive_density": 23.958,
+        "negative_density": 4.167,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.474015,
+              41.912188
+            ],
+            [
+              12.480146,
+              41.91377
+            ],
+            [
+              12.48146,
+              41.911309
+            ],
+            [
+              12.484964,
+              41.909199
+            ],
+            [
+              12.488029,
+              41.910078
+            ],
+            [
+              12.488467,
+              41.908672
+            ],
+            [
+              12.48781,
+              41.906738
+            ],
+            [
+              12.485839,
+              41.904102
+            ],
+            [
+              12.484964,
+              41.901641
+            ],
+            [
+              12.484745,
+              41.898125
+            ],
+            [
+              12.484088,
+              41.89584
+            ],
+            [
+              12.481022,
+              41.894258
+            ],
+            [
+              12.47927,
+              41.894961
+            ],
+            [
+              12.477518,
+              41.89918
+            ],
+            [
+              12.475766,
+              41.903398
+            ],
+            [
+              12.474453,
+              41.906914
+            ],
+            [
+              12.474015,
+              41.912188
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 8,
+        "roman": "VIII",
+        "name": "Forum Romanum",
+        "area": 0.28,
+        "pos": 26,
+        "neg": 1,
+        "net": 89.286,
+        "normalized": 0.797,
+        "grade_normalized": "A",
+        "grade_agnostic": "A",
+        "positive_pct": 96.3,
+        "description": "The hyper-dense, monumental core of Roman public life. This tiny region was the administrative and political capital of the empire, heavily packed with grand public squares, courts, and temples, with zero space allowed for factories or residential trash.",
+        "positive_density": 92.857,
+        "negative_density": 3.571,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.480146,
+              41.893906
+            ],
+            [
+              12.482774,
+              41.894609
+            ],
+            [
+              12.484964,
+              41.893906
+            ],
+            [
+              12.486058,
+              41.8925
+            ],
+            [
+              12.48562,
+              41.890918
+            ],
+            [
+              12.48365,
+              41.890039
+            ],
+            [
+              12.48146,
+              41.890215
+            ],
+            [
+              12.480146,
+              41.891445
+            ],
+            [
+              12.480146,
+              41.893906
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9,
+        "roman": "IX",
+        "name": "Circus Flaminius",
+        "area": 1.58,
+        "pos": 28,
+        "neg": 6,
+        "net": 13.924,
+        "normalized": 0.159,
+        "grade_normalized": "D",
+        "grade_agnostic": "B",
+        "positive_pct": 82.35,
+        "description": "A major public leisure and entertainment plain located along the Tiber river. It was packed with public plazas, theaters, temples, and open sports arenas, acting as a massive social hub for the entire city population.",
+        "positive_density": 17.722,
+        "negative_density": 3.797,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.474015,
+              41.912188
+            ],
+            [
+              12.473139,
+              41.905859
+            ],
+            [
+              12.471387,
+              41.903398
+            ],
+            [
+              12.469197,
+              41.901992
+            ],
+            [
+              12.466131,
+              41.901289
+            ],
+            [
+              12.463066,
+              41.900586
+            ],
+            [
+              12.462409,
+              41.898125
+            ],
+            [
+              12.463504,
+              41.895664
+            ],
+            [
+              12.465693,
+              41.89373
+            ],
+            [
+              12.468321,
+              41.891797
+            ],
+            [
+              12.470949,
+              41.890566
+            ],
+            [
+              12.474453,
+              41.890391
+            ],
+            [
+              12.477737,
+              41.890918
+            ],
+            [
+              12.480146,
+              41.892148
+            ],
+            [
+              12.481022,
+              41.894258
+            ],
+            [
+              12.477518,
+              41.89918
+            ],
+            [
+              12.474015,
+              41.912188
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "roman": "X",
+        "name": "Palatium",
+        "area": 0.15,
+        "pos": 18,
+        "neg": 1,
+        "net": 113.333,
+        "normalized": 1.0,
+        "grade_normalized": "A",
+        "grade_agnostic": "A",
+        "positive_pct": 94.74,
+        "description": "The ultra-exclusive imperial hilltop core covering the Palatine Hill. This pinpoint region held a flat monopoly on absolute wealth, serving as the gated home of the emperor's palaces and premium elite mansions, completely insulated from urban hazards.",
+        "positive_density": 120.0,
+        "negative_density": 6.667,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.481022,
+              41.890391
+            ],
+            [
+              12.485839,
+              41.890742
+            ],
+            [
+              12.489343,
+              41.889688
+            ],
+            [
+              12.488905,
+              41.887578
+            ],
+            [
+              12.487591,
+              41.885469
+            ],
+            [
+              12.485839,
+              41.883887
+            ],
+            [
+              12.48365,
+              41.884766
+            ],
+            [
+              12.48146,
+              41.886523
+            ],
+            [
+              12.480146,
+              41.888457
+            ],
+            [
+              12.481022,
+              41.890391
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "roman": "XI",
+        "name": "Circus Maximus",
+        "area": 0.31,
+        "pos": 15,
+        "neg": 0,
+        "net": 48.387,
+        "normalized": 0.45,
+        "grade_normalized": "C",
+        "grade_agnostic": "A",
+        "positive_pct": 100.0,
+        "description": "A long, narrow valley region dominated by the massive chariot-racing stadium. While it held immense utility and public value, it was a high-traffic zone constantly crowded by millions of spectators and commercial stalls.",
+        "positive_density": 48.387,
+        "negative_density": 0.0,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.475985,
+              41.890215
+            ],
+            [
+              12.480146,
+              41.890391
+            ],
+            [
+              12.48146,
+              41.888984
+            ],
+            [
+              12.48365,
+              41.887227
+            ],
+            [
+              12.485839,
+              41.885469
+            ],
+            [
+              12.486934,
+              41.884062
+            ],
+            [
+              12.484526,
+              41.881602
+            ],
+            [
+              12.481898,
+              41.882832
+            ],
+            [
+              12.47927,
+              41.88459
+            ],
+            [
+              12.47708,
+              41.886523
+            ],
+            [
+              12.475985,
+              41.890215
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 12,
+        "roman": "XII",
+        "name": "Piscina Publica",
+        "area": 0.68,
+        "pos": 11,
+        "neg": 0,
+        "net": 16.176,
+        "normalized": 0.178,
+        "grade_normalized": "D",
+        "grade_agnostic": "A",
+        "positive_pct": 100.0,
+        "description": "A quiet, residential southern hill district. It featured a healthy mix of public water reservoirs and standard housing blocks, acting as a comfortable, stable neighborhood for middle-class residents.",
+        "positive_density": 16.176,
+        "negative_density": 0.0,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.484526,
+              41.882656
+            ],
+            [
+              12.488029,
+              41.883887
+            ],
+            [
+              12.491095,
+              41.883359
+            ],
+            [
+              12.493285,
+              41.88125
+            ],
+            [
+              12.495912,
+              41.878789
+            ],
+            [
+              12.49854,
+              41.875977
+            ],
+            [
+              12.501606,
+              41.872812
+            ],
+            [
+              12.497664,
+              41.871582
+            ],
+            [
+              12.494161,
+              41.873164
+            ],
+            [
+              12.490657,
+              41.875273
+            ],
+            [
+              12.488029,
+              41.877734
+            ],
+            [
+              12.484526,
+              41.880195
+            ],
+            [
+              12.484526,
+              41.882656
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13,
+        "roman": "XIII",
+        "name": "Aventinus",
+        "area": 0.62,
+        "pos": 3,
+        "neg": 6,
+        "net": -4.839,
+        "normalized": 0.0,
+        "grade_normalized": "D",
+        "grade_agnostic": "D",
+        "positive_pct": 33.33,
+        "description": "A starkly split riverside hill district. While the high slopes of the Aventine Hill hosted affluent townhouses, its low riverside flats contained the city's main shipping port, massive wholesale granaries, and intense commercial dock traffic.",
+        "positive_density": 4.839,
+        "negative_density": 9.677,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.473139,
+              41.883008
+            ],
+            [
+              12.47708,
+              41.884766
+            ],
+            [
+              12.480146,
+              41.883535
+            ],
+            [
+              12.482774,
+              41.881953
+            ],
+            [
+              12.484526,
+              41.880547
+            ],
+            [
+              12.482774,
+              41.878437
+            ],
+            [
+              12.480146,
+              41.875977
+            ],
+            [
+              12.47708,
+              41.873867
+            ],
+            [
+              12.472482,
+              41.871406
+            ],
+            [
+              12.47073,
+              41.874219
+            ],
+            [
+              12.470949,
+              41.878437
+            ],
+            [
+              12.473139,
+              41.883008
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 14,
+        "roman": "XIV",
+        "name": "Trans Tiberim",
+        "area": 2.15,
+        "pos": 7,
+        "neg": 8,
+        "net": -0.465,
+        "normalized": 0.037,
+        "grade_normalized": "D",
+        "grade_agnostic": "D",
+        "positive_pct": 46.67,
+        "description": "The ultimate industrial sacrifice zone, separated from the city core across the Tiber River. This expansive peripheral region absorbed the city's heaviest burdens, legally concentrating all smoky brick factories, toxic leather tanneries, and deep stone quarries directly into the backyards of its dense laborer settlements.",
+        "positive_density": 3.256,
+        "negative_density": 3.721,
+        "source_reference": "Rome-SF.docx: pp.21-24 descriptions; Tables 1-3 scores"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.460438,
+              41.887578
+            ],
+            [
+              12.463504,
+              41.888633
+            ],
+            [
+              12.466131,
+              41.889863
+            ],
+            [
+              12.468759,
+              41.891094
+            ],
+            [
+              12.471387,
+              41.891094
+            ],
+            [
+              12.474015,
+              41.890215
+            ],
+            [
+              12.475766,
+              41.889336
+            ],
+            [
+              12.475766,
+              41.886523
+            ],
+            [
+              12.474453,
+              41.884062
+            ],
+            [
+              12.472263,
+              41.881602
+            ],
+            [
+              12.470073,
+              41.879844
+            ],
+            [
+              12.468759,
+              41.877734
+            ],
+            [
+              12.46854,
+              41.871406
+            ],
+            [
+              12.465255,
+              41.872109
+            ],
+            [
+              12.463066,
+              41.87457
+            ],
+            [
+              12.463066,
+              41.880195
+            ],
+            [
+              12.462628,
+              41.884062
+            ],
+            [
+              12.460438,
+              41.887578
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

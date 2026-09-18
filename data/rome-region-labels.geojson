@@ -1,0 +1,215 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "label": "I",
+        "name": "Porta Capena"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.50766976923077,
+          41.87819407692307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2,
+        "label": "II",
+        "name": "Caelimontium"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4945547,
+          41.8859256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3,
+        "label": "III",
+        "name": "Isis et Serapis"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.4965255,
+          41.892693300000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 4,
+        "label": "IV",
+        "name": "Templum Pacis"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.488522,
+          41.892697875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5,
+        "label": "V",
+        "name": "Esquiliae"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.507184052631578,
+          41.89615436842105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6,
+        "label": "VI",
+        "name": "Alta Semita"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.493912466666666,
+          41.90037486666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7,
+        "label": "VII",
+        "name": "Via Lata"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.48203475,
+          41.9043983125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 8,
+        "label": "VIII",
+        "name": "Forum Romanum"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.48310225,
+          41.89219225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9,
+        "label": "IX",
+        "name": "Circus Flaminius"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.471167937499999,
+          41.8976305625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "label": "X",
+        "name": "Palatium"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.48486611111111,
+          41.88750011111111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "label": "XI",
+        "name": "Circus Maximus"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.481678800000001,
+          41.8861895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 12,
+        "label": "XII",
+        "name": "Piscina Publica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.492335833333334,
+          41.8780565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 13,
+        "label": "XIII",
+        "name": "Aventinus"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.477438727272727,
+          41.878741090909095
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 14,
+        "label": "XIV",
+        "name": "Trans Tiberim"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.46846288235294,
+          41.88352470588235
+        ]
+      }
+    }
+  ]
+}
