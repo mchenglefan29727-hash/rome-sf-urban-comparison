@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive GIS comparison of Augustan Rome and 1937 San Francisco HOLC districts." />
+  <title>Rome × San Francisco — Urban Inequality Atlas</title>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.13.0/dist/maplibre-gl.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-visual-style="classic" data-layout-mode="standard">
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-view="explore" aria-label="Go to Explore">
+        <span class="brand-mark">R×SF</span>
+        <span class="brand-copy"><strong>Urban Inequality Atlas</strong><small>Rome × San Francisco</small></span>
+      </button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-link active" data-view="explore">Explore</button>
+        <button class="nav-link" data-view="compare">Compare</button>
+        <button class="nav-link" data-view="story">Story</button>
+        <button class="nav-link" data-view="methodology">Methodology</button>
+      </nav>
+      <div class="top-actions">
+        <span class="status-pill"><span class="status-dot"></span>Source-grounded GIS</span>
+        <button class="text-btn" id="exportCsv" title="Export the Roman region score table as CSV">Export data</button>
+        <button class="text-btn style-studio-btn" id="styleStudioToggle" type="button" aria-expanded="false">View style</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="view active" id="view-explore">
+        <div class="hero-strip compact">
+          <div>
+            <span class="eyebrow">A comparative urban history project</span>
+            <h1>How does a city turn social hierarchy into physical geography?</h1>
+            <p>Explore 14 regions of Augustan Rome alongside the 1937 HOLC grading framework used in San Francisco. The visual design remains the same as the original prototype; only the map engine has been upgraded to GIS.</p>
+          </div>
+          <div class="hero-stats">
+            <div><strong>14</strong><span>Roman regions</span></div>
+            <div><strong>96</strong><span>SF HOLC districts</span></div>
+            <div><strong>383</strong><span>Pleiades places screened</span></div>
+          </div>
+        </div>
+
+        <div class="workspace gis-workspace">
+          <aside class="control-panel">
+            <div class="panel-section">
+              <div class="section-label">City</div>
+              <div class="segmented" id="citySwitch">
+                <button class="seg-btn active" data-city="rome">Rome</button>
+                <button class="seg-btn" data-city="sf">San Francisco</button>
+              </div>
+            </div>
+
+            <div class="panel-section rome-only" id="scoreControls">
+              <div class="section-label">Scoring method</div>
+              <label class="radio-row"><input type="radio" name="score" value="normalized" checked><span><strong>Normalized investment</strong><small>Density / area-sensitive model</small></span></label>
+              <label class="radio-row"><input type="radio" name="score" value="agnostic"><span><strong>Size-agnostic</strong><small>Positive share of coded places</small></span></label>
+            </div>
+
+            <div class="panel-section rome-only" id="lensControls">
+              <div class="section-label">Interpretive lens</div>
+              <div class="chip-row" id="lensSwitch">
+                <button class="chip active" data-lens="all">Grades</button>
+                <button class="chip" data-lens="positive">Positive density</button>
+                <button class="chip" data-lens="negative">Negative density</button>
+              </div>
+            </div>
+
+            <div class="panel-section rome-only">
+              <div class="section-label">Roman region</div>
+              <select id="regionSelect" class="select-control" aria-label="Select Roman region"></select>
+              <button class="secondary-btn full" id="focusRegion">Focus selected region</button>
+            </div>
+
+            <div class="panel-section sf-only hidden">
+              <div class="section-label">HOLC grade</div>
+              <div class="grade-switch" id="sfGradeSwitch">
+                <button class="grade-chip active" data-grade="ALL">All</button>
+                <button class="grade-chip grade-a" data-grade="A">A</button>
+                <button class="grade-chip grade-b" data-grade="B">B</button>
+                <button class="grade-chip grade-c" data-grade="C">C</button>
+                <button class="grade-chip grade-d" data-grade="D">D</button>
+              </div>
+              <p class="microcopy">San Francisco does not use the Rome interpretive lens or Rome investment ranking.</p>
+            </div>
+
+            <div class="panel-section">
+              <div class="section-label">Map</div>
+              <div class="button-stack">
+                <button class="secondary-btn" id="resetMap">Reset view</button>
+                <button class="secondary-btn" id="fullscreenMap">Fullscreen</button>
+              </div>
+              <p class="microcopy">The map stays visible. OpenStreetMap tiles enhance the basemap when online; Rome polygons are bundled locally. If San Francisco vectors cannot load, a local paper overlay remains on the interactive map.</p>
+            </div>
+
+            <div class="panel-section source-note">
+              <div class="section-label">Source integrity</div>
+              <p id="sourceIntegrityText">Rome region boundaries are digitized from the uploaded paper figure; scores come directly from the paper tables.</p>
+            </div>
+          </aside>
+
+          <section class="map-column">
+            <div class="map-card">
+              <div class="map-toolbar">
+                <div>
+                  <strong id="mapTitle">Augustan Rome</strong>
+                  <span id="mapSubtitle">Interactive digitized 14-region overlay</span>
+                </div>
+                <div class="legend-inline" id="mapLegend">
+                  <span><i class="swatch a"></i>A</span><span><i class="swatch b"></i>B</span><span><i class="swatch c"></i>C</span><span><i class="swatch d"></i>D</span>
+                </div>
+              </div>
+              <div id="exploreMap" class="map-surface"></div>
+              <div class="map-fallback" id="mapFallback" hidden aria-live="polite">
+                <img id="mapFallbackImage" src="assets/rome-regions.png" alt="Paper figure fallback" />
+                <div class="fallback-copy">
+                  <strong id="mapFallbackTitle">Map fallback</strong>
+                  <span id="mapFallbackText">A static paper figure is used only if the mapping engine itself cannot start. Ordinary network/data-layer failures keep the interactive map visible.</span>
+                </div>
+              </div>
+              <div class="map-status" id="mapStatus">Select a Roman region on the map.</div>
+            </div>
+
+            <div class="below-map-grid">
+              <section class="analytics-card" id="rankingCard">
+                <div class="card-head"><div><span class="eyebrow">Rome</span><h3 id="rankingTitle">Regional investment ranking</h3></div><span class="metric-pill" id="rankingMetric">Normalized score</span></div>
+                <div id="rankingBars" class="ranking-bars"></div>
+              </section>
+
+              <section class="analytics-card hidden" id="sfDistributionCard">
+                <div class="card-head"><div><span class="eyebrow">San Francisco</span><h3>HOLC graded footprint</h3></div><span class="metric-pill">Paper pp.10–15</span></div>
+                <div id="sfDistributionBars" class="ranking-bars"></div>
+              </section>
+
+              <section class="reference-card rome-only" id="referenceCard">
+                <div class="card-head"><div><span class="eyebrow">Reference</span><h3>Paper’s 14-region figure</h3></div><span class="metric-pill">Digitization source</span></div>
+                <img src="assets/rome-regions-cropped.png" alt="Cropped source figure of Augustan Rome regions" />
+                <p>The live polygon layer is an approximate digitization of this figure, georeferenced with the paper’s Rome bounding box.</p>
+              </section>
+            </div>
+          </section>
+
+          <aside class="detail-panel" id="detailPanel">
+            <div id="detailContent"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-compare">
+        <div class="section-header">
+          <span class="eyebrow">Synchronized comparison</span>
+          <h2>Rome and San Francisco on two live maps</h2>
+          <p>Filter one HOLC-style grade across both cities. Rome uses the current scoring model; San Francisco uses the original HOLC vector polygons.</p>
+        </div>
+        <div class="compare-controls">
+          <span>Highlight grade</span>
+          <button class="grade-chip active" data-compare-grade="ALL">All</button>
+          <button class="grade-chip grade-a" data-compare-grade="A">A</button>
+          <button class="grade-chip grade-b" data-compare-grade="B">B</button>
+          <button class="grade-chip grade-c" data-compare-grade="C">C</button>
+          <button class="grade-chip grade-d" data-compare-grade="D">D</button>
+          <select id="compareScore" class="select-control compact-select">
+            <option value="normalized">Rome: normalized</option>
+            <option value="agnostic">Rome: size-agnostic</option>
+          </select>
+        </div>
+        <div class="compare-map-grid">
+          <div class="compare-map-card"><div class="compare-map-head"><strong>Augustan Rome</strong><span>Digitized paper regions</span></div><div id="compareRomeMap" class="compare-map"></div></div>
+          <div class="compare-map-card"><div class="compare-map-head"><strong>San Francisco · 1937</strong><span>Mapping Inequality HOLC polygons</span></div><div id="compareSfMap" class="compare-map"></div></div>
+        </div>
+        <div class="comparison-table-card">
+          <h3>Paper Table 4 · San Francisco vs Rome grade estimates</h3><p class="table-source-note"><strong>Source integrity:</strong> the SF Pct values below are reproduced exactly as printed in Table 4. They are a different series from the graded-footprint shares shown in Explore (8.65%, 31.32%, 24.97%, 35.06%); this site does not silently reconcile the paper’s two series.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Grade</th><th>SF Pct</th><th>Rome normalized</th><th>Normalized diff.</th><th>Rome size-agnostic</th><th>Agnostic diff.</th></tr></thead>
+              <tbody>
+                <tr><td><span class="grade-dot grade-a-bg">A</span></td><td>13.54%</td><td>14.29%</td><td>+0.74%</td><td>28.57%</td><td>+15.03%</td></tr>
+                <tr><td><span class="grade-dot grade-b-bg">B</span></td><td>31.25%</td><td>7.14%</td><td>−24.11%</td><td>21.43%</td><td>−9.82%</td></tr>
+                <tr><td><span class="grade-dot grade-c-bg">C</span></td><td>27.08%</td><td>7.14%</td><td>−19.94%</td><td>7.14%</td><td>−19.94%</td></tr>
+                <tr><td><span class="grade-dot grade-d-bg">D</span></td><td>17.71%</td><td>71.43%</td><td>+53.72%</td><td>42.86%</td><td>+25.15%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-story">
+        <div class="section-header">
+          <span class="eyebrow">Guided interpretation</span>
+          <h2>From a paper argument to a spatial interface</h2>
+          <p>Use the live maps for exploration; use this short story mode for presentation or defense.</p>
+        </div>
+        <div class="story-shell">
+          <div class="story-nav" id="storyNav"></div>
+          <div class="story-stage">
+            <div class="story-copy"><span class="eyebrow" id="storyKicker"></span><h2 id="storyTitle"></h2><p id="storyBody"></p><div class="story-stats" id="storyStats"></div></div>
+            <div class="story-visual"><img id="storyImage" alt="Story visual" /></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-methodology">
+        <div class="section-header">
+          <span class="eyebrow">Methods & provenance</span>
+          <h2>What is exact, what is digitized, and what remains approximate?</h2>
+          <p>This version deliberately separates original GIS data from paper-derived interpretation.</p>
+        </div>
+        <div class="method-grid">
+          <article class="method-card"><span class="method-num">01</span><h3>San Francisco · exact vector layer</h3><p>The site streams Mapping Inequality HOLC polygons from a PMTiles archive. Each area can be hovered and clicked, and the original A/B/C/D grade and label are read from the vector feature.</p></article>
+          <article class="method-card"><span class="method-num">02</span><h3>Rome · digitized region polygons</h3><p>The uploaded paper includes the 14-region figure, but not the original GIS polygon file. This site digitizes that figure into GeoJSON and georeferences it with the paper’s stated Rome bounding box. Treat the boundaries as presentation-grade, not surveyed GIS geometry.</p></article>
+          <article class="method-card"><span class="method-num">03</span><h3>Rome · scoring</h3><p>Positive/negative counts, area, net investment score, normalized score and both HOLC-style grades are copied from the paper’s tables. Switching scoring method changes both map grades and the regional ranking.</p></article>
+          <article class="method-card"><span class="method-num">04</span><h3>Pleiades</h3><p>The paper uses Pleiades place coordinates for its archaeological dataset. Pleiades publishes GIS-ready coordinates, but the uploaded DOCX does not contain the paper’s exact 383-row working extract, so this version does not invent those point records.</p></article>
+        </div>
+        <div class="source-trace-card">
+          <h3>Prototype notes</h3>
+          <ul>
+            <li>San Francisco is no longer a set of static grade images in Explore or Compare: it is a live vector map.</li>
+            <li>Rome is no longer a screenshot with marker overlays: the 14 regions are clickable GeoJSON polygons on a real basemap.</li>
+            <li>The original paper figures are retained only as reference/fallback visuals.</li>
+            <li>The Rome GeoJSON is also included in <code>data/rome-regions.geojson</code> so it can be refined later in QGIS or another GIS editor.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+  <div class="style-studio" id="styleStudio" hidden>
+    <div class="style-studio-head">
+      <div>
+        <span class="eyebrow">Presentation studio</span>
+        <strong>Choose a visual direction</strong>
+      </div>
+      <button class="style-studio-close" id="styleStudioClose" type="button" aria-label="Close">×</button>
+    </div>
+
+    <div class="style-studio-section">
+      <span class="style-studio-label">Visual style</span>
+      <div class="style-choice-grid">
+        <button class="style-choice active" data-visual-style-choice="classic" type="button">
+          <span class="style-preview preview-classic"><i></i><i></i><i></i></span>
+          <span><strong>Classic Research</strong><small>V5 original · academic / paper-like</small></span>
+        </button>
+        <button class="style-choice" data-visual-style-choice="archive" type="button">
+          <span class="style-preview preview-archive"><i></i><i></i><i></i></span>
+          <span><strong>Historical Archive</strong><small>Parchment · burgundy · atlas framing</small></span>
+        </button>
+        <button class="style-choice" data-visual-style-choice="museum" type="button">
+          <span class="style-preview preview-museum"><i></i><i></i><i></i></span>
+          <span><strong>Museum Exhibit</strong><small>White space · editorial · exhibition feel</small></span>
+        </button>
+        <button class="style-choice" data-visual-style-choice="datalab" type="button">
+          <span class="style-preview preview-datalab"><i></i><i></i><i></i></span>
+          <span><strong>Data Lab</strong><small>Dense · analytical · dashboard-driven</small></span>
+        </button>
+        <button class="style-choice" data-visual-style-choice="night" type="button">
+          <span class="style-preview preview-night"><i></i><i></i><i></i></span>
+          <span><strong>Night Cartography</strong><small>Dark atlas · luminous data layers</small></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="style-studio-section">
+      <span class="style-studio-label">Explore layout</span>
+      <div class="layout-choice-row">
+        <button class="layout-choice active" data-layout-choice="standard" type="button"><strong>Standard</strong><small>V5 three-column</small></button>
+        <button class="layout-choice" data-layout-choice="mapfocus" type="button"><strong>Map Focus</strong><small>Wider map / tighter panels</small></button>
+        <button class="layout-choice" data-layout-choice="exhibit" type="button"><strong>Exhibit</strong><small>Map first / details below</small></button>
+      </div>
+    </div>
+
+    <div class="style-studio-foot">
+      <span>Styles change presentation only. GIS data, scoring, filters and interactions stay unchanged.</span>
+      <button class="secondary-btn" id="resetPresentation" type="button">Reset to V5</button>
+    </div>
+  </div>
+  <div class="style-studio-backdrop" id="styleStudioBackdrop" hidden></div>
+
+
+  <script src="https://unpkg.com/maplibre-gl@5.13.0/dist/maplibre-gl.js"></script>
+  <script src="https://unpkg.com/pmtiles@4.5.0/dist/pmtiles.js"></script>
+  <script src="data/rome-regions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
