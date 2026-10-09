@@ -34,3 +34,5 @@ Audit/docs:
 - DATA-AUDIT.md
 - STYLE-LAB.md
 - MAP-RESTORED.md
+
+- data/story-source.js (verbatim source paragraphs and Tables 1–4 for Story expansion)

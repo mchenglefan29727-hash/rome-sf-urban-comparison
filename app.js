@@ -911,6 +911,7 @@
   const stories = [
     {
       kicker: "01 · The question",
+      sourceKey: "question",
       title: "Two cities, nearly two millennia apart",
       body: "The paper asks whether resource-driven spatial hierarchy can recur across radically different urban systems. San Francisco and Augustan Rome are compared not as equivalent histories, but as a test of recurring spatial mechanisms.",
       image: "assets/sf-all.png",
@@ -918,6 +919,7 @@
     },
     {
       kicker: "02 · San Francisco",
+      sourceKey: "sanfrancisco",
       title: "Classification becomes geography",
       body: "The 1937 HOLC map divided San Francisco into A, B, C and D graded areas. In the live Explore map those boundaries are vector polygons rather than paper screenshots.",
       image: "assets/sf-holc-composite.png",
@@ -925,6 +927,7 @@
     },
     {
       kicker: "03 · Rome",
+      sourceKey: "rome",
       title: "Translate the spatial framework",
       body: "The paper maps archaeological places into fourteen Augustan administrative regions. This GIS edition digitizes those region boundaries from the paper figure so the full areas—not just labels—are clickable.",
       image: "assets/rome-regions-cropped.png",
@@ -932,6 +935,7 @@
     },
     {
       kicker: "04 · Scoring",
+      sourceKey: "scoring",
       title: "The model changes the map",
       body: "The paper tests an area-sensitive normalized investment model and a size-agnostic positive-share model. Switching the scoring method changes both the Roman grade map and the ranking.",
       image: "assets/rome-regions.png",
@@ -939,12 +943,48 @@
     },
     {
       kicker: "05 · Limitation",
+      sourceKey: "limitations",
       title: "Resolution matters",
       body: "The paper itself warns that comparing ninety-six San Francisco districts with only fourteen Roman regions creates substantial scale differences. This interface keeps that limitation visible rather than smoothing it away.",
       image: "assets/rome-bounds.png",
       stats: [["96", "SF districts"], ["14", "Rome regions"]]
     }
   ];
+
+  function renderStoryOriginal(sourceKey) {
+    const host = $("#storyOriginalWrap");
+    if (!host) return;
+    const source = (window.STORY_SOURCE || []).find(item => item.key === sourceKey);
+    if (!source) {
+      host.innerHTML = "";
+      return;
+    }
+
+    const blockHtml = source.blocks.map(block => {
+      if (block.type === "heading") {
+        return `<h3 class="story-original-heading">${esc(block.text)}</h3>`;
+      }
+      if (block.type === "table") {
+        const head = `<thead><tr>${block.headers.map(cell => `<th>${esc(cell)}</th>`).join("")}</tr></thead>`;
+        const body = `<tbody>${block.rows.map(row => `<tr>${row.map(cell => `<td>${esc(cell)}</td>`).join("")}</tr>`).join("")}</tbody>`;
+        return `<div class="story-original-table-wrap"><table class="story-original-table">${head}${body}</table></div>`;
+      }
+      return `<p class="story-original-paragraph">${esc(block.text)}</p>`;
+    }).join("");
+
+    const tableLabel = source.tableCount ? ` · ${source.tableCount} original table${source.tableCount === 1 ? "" : "s"}` : "";
+    host.innerHTML = `
+      <details class="story-original-details">
+        <summary>
+          <span class="story-original-summary-title">Read the complete original section</span>
+          <span class="story-original-summary-meta">${source.paragraphCount} paragraphs${tableLabel} · Rome-SF.docx</span>
+        </summary>
+        <div class="story-original-content">
+          <p class="story-original-provenance">Source text reproduced from the uploaded DOCX. Wording, section order and table values are preserved as supplied.</p>
+          ${blockHtml}
+        </div>
+      </details>`;
+  }
 
   function renderStory(index = state.storyIndex) {
     state.storyIndex = index;
@@ -956,6 +996,7 @@
     $("#storyStats").innerHTML = s.stats.map(([value, label]) =>
       `<div><strong>${esc(value)}</strong><span>${esc(label)}</span></div>`
     ).join("");
+    renderStoryOriginal(s.sourceKey);
     $$("#storyNav button").forEach((btn, i) => btn.classList.toggle("active", i === index));
   }
 

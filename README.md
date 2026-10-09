@@ -141,3 +141,8 @@ python -m http.server 8787
 
 ## Style Lab fixed package
 This package is built from the complete V5 distribution. It includes all original assets, GIS data files, and local launch scripts, with the Style Lab HTML/CSS/JS layered on top.
+
+
+## Story 原文展开
+
+Story 的 5 个章节现已各自关联原始 `Rome-SF.docx` 对应段落。每一章新增“Read the complete original section”折叠区，点击后可展开完整原段及对应原始表格。内容按论文原顺序组织，保留原文措辞和表格数值；参考文献部分不放入 Story 正文。原有地图、GIS、评分、风格切换功能不变。

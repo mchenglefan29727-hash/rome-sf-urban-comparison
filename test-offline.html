@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Interactive GIS comparison of Augustan Rome and 1937 San Francisco HOLC districts." />
   <title>Rome × San Francisco — Urban Inequality Atlas</title>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.13.0/dist/maplibre-gl.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-visual-style="classic" data-layout-mode="standard">
@@ -92,7 +93,7 @@
                 <button class="secondary-btn" id="resetMap">Reset view</button>
                 <button class="secondary-btn" id="fullscreenMap">Fullscreen</button>
               </div>
-              <p class="microcopy">Live map requires internet access for the basemap and San Francisco PMTiles layer.</p>
+              <p class="microcopy">The map stays visible. OpenStreetMap tiles enhance the basemap when online; Rome polygons are bundled locally. If San Francisco vectors cannot load, a local paper overlay remains on the interactive map.</p>
             </div>
 
             <div class="panel-section source-note">
@@ -117,7 +118,7 @@
                 <img id="mapFallbackImage" src="assets/rome-regions.png" alt="Paper figure fallback" />
                 <div class="fallback-copy">
                   <strong id="mapFallbackTitle">Map fallback</strong>
-                  <span id="mapFallbackText">The local paper figure is shown only when the GIS engine or required online layer is unavailable.</span>
+                  <span id="mapFallbackText">A static paper figure is used only if the mapping engine itself cannot start. Ordinary network/data-layer failures keep the interactive map visible.</span>
                 </div>
               </div>
               <div class="map-status" id="mapStatus">Select a Roman region on the map.</div>
@@ -197,6 +198,7 @@
           <div class="story-stage">
             <div class="story-copy"><span class="eyebrow" id="storyKicker"></span><h2 id="storyTitle"></h2><p id="storyBody"></p><div class="story-stats" id="storyStats"></div></div>
             <div class="story-visual"><img id="storyImage" alt="Story visual" /></div>
+            <div class="story-original-wrap" id="storyOriginalWrap"></div>
           </div>
         </div>
       </section>
@@ -279,7 +281,10 @@
   <div class="style-studio-backdrop" id="styleStudioBackdrop" hidden></div>
 
 
+  <script src="https://unpkg.com/maplibre-gl@5.13.0/dist/maplibre-gl.js"></script>
+  <script src="https://unpkg.com/pmtiles@4.5.0/dist/pmtiles.js"></script>
   <script src="data/rome-regions.js"></script>
+  <script src="data/story-source.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
